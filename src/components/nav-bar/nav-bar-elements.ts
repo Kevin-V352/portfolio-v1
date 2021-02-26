@@ -30,14 +30,16 @@ export const OptionText = styled.span`
   color: white;
   margin-left: 2rem;
   display: none;
-  font-family: 'Text Me One', sans-serif;
 `;
 
 export const NavBarItem = styled.li`
   width: 100%;
   &:last-child {  
     margin-top: auto;
-  } 
+  };
+  &:hover {
+    background-color: red
+  };
 `;
 
 export const NavBarList = styled.ul`

@@ -23,8 +23,8 @@ const NavBar: FC = (): JSX.Element => {
 					<NavBarList>
 						<NavBarItem>
 							<OptionButton>
-								<PaperPlaneIcon/>
-								<OptionText>Contacto</OptionText>
+								<UserCircleIcon/>
+								<OptionText>Yo</OptionText>
 							</OptionButton>
 						</NavBarItem>
 						<NavBarItem>
@@ -35,14 +35,14 @@ const NavBar: FC = (): JSX.Element => {
 						</NavBarItem>
 						<NavBarItem>
 							<OptionButton>
-								<UserCircleIcon/>
-								<OptionText>Yo</OptionText>
+								<LaptopCodeIcon/>
+								<OptionText>Stack</OptionText>
 							</OptionButton>
 						</NavBarItem>
 						<NavBarItem>
 							<OptionButton>
-								<LaptopCodeIcon/>
-								<OptionText>Stack</OptionText>
+								<PaperPlaneIcon/>
+								<OptionText>Contacto</OptionText>
 							</OptionButton>
 						</NavBarItem>
 						<NavBarItem>

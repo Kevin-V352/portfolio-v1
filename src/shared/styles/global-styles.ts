@@ -3,15 +3,15 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 	:root {
-		font-family: 'Text Me One', sans-serif;
-		--black: #17202A;
+		--black: #1C1C1C;
 		--gray: #B6B6B6;
 		--orange: #F39C12; 
 		--transition-time: 400ms;
 	};
 
 	* {
-		font-size: 16px;
+		font-size: 18px;
+		font-family: 'Text Me One', sans-serif;
 	}
 
 	body {
