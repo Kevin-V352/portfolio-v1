@@ -4,31 +4,34 @@ import styled from 'styled-components';
 /* <---React icons---> */
 import { 
   FaGithub,
-  FaCodeBranch, 
-  FaLaptopCode, 
-  FaPaperPlane, 
-  FaUserCircle
 } from 'react-icons/fa';
+
+import {
+  BiGitBranch,
+  BiSend,
+  BiCube,
+  BiUser
+} from 'react-icons/bi';
 
 //Default settings for icons
 const defaultConfigIcon = `
   font-size: 2rem;
-  color: var(--gray);
-  margin: 0 1.5rem;
+  margin-left: 1rem;
 `;
 
-export const OptionButton = styled.button`
+export const OptionButton = styled.div`
+  transition: ease var(--transition-time-fast);
   display: flex;
   align-items: center;
   height: 5rem;
   background-color: transparent;
   border: none;
   padding: 0;
+  color: var(--gray);
 `;
 
 export const OptionText = styled.span`
-  color: white;
-  margin-left: 2rem;
+  margin-left: 1rem;
   display: none;
 `;
 
@@ -38,7 +41,11 @@ export const NavBarItem = styled.li`
     margin-top: auto;
   };
   &:hover {
-    background-color: red
+    ${OptionButton} {
+      color: var(--orange);
+      transform: scale(1.15);
+      transition: ease var(--transition-time-fast);
+    };
   };
 `;
 
@@ -53,34 +60,33 @@ export const NavBarList = styled.ul`
 `;
 
 export const NavBarContainer = styled.nav`
-  width: 5rem;
+  width: 4rem;
   height: 100vh;
   position: fixed;
   background-color:var(--black);
-  transition: var(--transition-time);
+  transition: var(--transition-time-normal);
   &:hover {
-    width: 13rem;
-    transition: var(--transition-time);
+    width: 10rem;
+    transition: var(--transition-time-normal);
     ${OptionText} {
       display: block;
-    }
-  }
-  
+    };
+  };
 `;
 
-export const CodeBranchIcon = styled(FaCodeBranch)`
+export const CodeBranchIcon = styled(BiGitBranch)`
   ${defaultConfigIcon};
 `;
 
-export const LaptopCodeIcon = styled(FaLaptopCode)`
+export const StackCodeIcon = styled(BiCube)`
   ${defaultConfigIcon};
 `;
 
-export const PaperPlaneIcon = styled(FaPaperPlane)`
+export const ContactIcon = styled(BiSend)`
   ${defaultConfigIcon};
 `;
 
-export const UserCircleIcon = styled(FaUserCircle)`
+export const UserIcon = styled(BiUser)`
   ${defaultConfigIcon};
 `;
 

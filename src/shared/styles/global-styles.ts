@@ -6,11 +6,12 @@ const GlobalStyles = createGlobalStyle`
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
 		--orange: #F39C12; 
-		--transition-time: 400ms;
+		--transition-time-fast: 200ms;
+		--transition-time-normal: 400ms;
 	};
 
 	* {
-		font-size: 18px;
+		font-size: 16px;
 		font-family: 'Text Me One', sans-serif;
 	}
 
