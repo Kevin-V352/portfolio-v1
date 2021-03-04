@@ -14,19 +14,35 @@ import {
 } from 'react-icons/bi';
 
 //Default settings for icons
-const defaultConfigIcon = `
+const defaultConfigIcon: string = `
   font-size: 2rem;
   margin-left: 1rem;
 `;
 
-export const OptionButton = styled.div`
-  transition: ease var(--transition-time-fast);
+//Configuration object for NavBarItem pseudo-classes (initial state)
+const initialStateFrame: string = `
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  box-sizing: border-box;
+`;
+
+//Configuration object for NavBarItem pseudo-classes (parameters for hover)
+const secondaryStateFrame: string = `
+  height: 100%;
+  width: 100%;
+  border: var(--orange) solid 2px;
+  transition: height 170ms linear, width 170ms linear 170ms;
+`;
+
+export const OptionContent = styled.div`
+  transition: var(--transition-fast);
   display: flex;
   align-items: center;
   height: 5rem;
+  width: min-content;
   background-color: transparent;
-  border: none;
-  padding: 0;
   color: var(--gray);
 `;
 
@@ -36,15 +52,40 @@ export const OptionText = styled.span`
 `;
 
 export const NavBarItem = styled.li`
+  position: relative;
+  cursor: pointer;
   width: 100%;
   &:last-child {  
     margin-top: auto;
   };
+  &:before {
+    ${initialStateFrame};
+    bottom: 0;
+    left: 0;
+  };
+  &:after {
+    ${initialStateFrame};
+    top: 0;
+    right: 0;
+  };
+
   &:hover {
-    ${OptionButton} {
+    //Animation display in the lower left edge
+    &:before {
+    ${secondaryStateFrame};
+    border-right: none;
+    border-bottom: none;
+  };
+  //Animation display in the upper right edge
+  &:after {
+    ${secondaryStateFrame};
+    border-left: none;
+    border-top: none;
+  };
+    ${OptionContent} {
       color: var(--orange);
       transform: scale(1.15);
-      transition: ease var(--transition-time-fast);
+      transition: var(--transition-fast);
     };
   };
 `;
@@ -60,16 +101,17 @@ export const NavBarList = styled.ul`
 `;
 
 export const NavBarContainer = styled.nav`
+  overflow: hidden;
   width: 4rem;
   height: 100vh;
   position: fixed;
   background-color:var(--black);
-  transition: var(--transition-time-normal);
+  transition: var(--transition-normal);
   &:hover {
     width: 10rem;
-    transition: var(--transition-time-normal);
+    transition: var(--transition-normal);
     ${OptionText} {
-      display: block;
+      display: inline;
     };
   };
 `;

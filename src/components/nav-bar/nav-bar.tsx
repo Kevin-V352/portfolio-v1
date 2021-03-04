@@ -9,7 +9,7 @@ import {
 	NavBarList, 
 	NavBarItem, 
 	ContactIcon,
-	OptionButton,
+	OptionContent,
 	StackCodeIcon,
 	CodeBranchIcon,
 	NavBarContainer
@@ -21,34 +21,34 @@ const NavBar: FC = (): JSX.Element => {
         <NavBarContainer>
 			<NavBarList>
 				<NavBarItem>
-					<OptionButton>
+					<OptionContent>
 						<UserIcon/>
 						<OptionText>Yo</OptionText>
-					</OptionButton>
+					</OptionContent>
 				</NavBarItem>
 				<NavBarItem>
-					<OptionButton>
+					<OptionContent>
 						<CodeBranchIcon/>
 						<OptionText>Proyectos</OptionText>
-					</OptionButton>
+					</OptionContent>
 				</NavBarItem>
 				<NavBarItem>
-					<OptionButton>
+					<OptionContent>
 						<StackCodeIcon/>
 						<OptionText>Stack</OptionText>
-					</OptionButton>
+					</OptionContent>
 				</NavBarItem>
 				<NavBarItem>
-					<OptionButton>
+					<OptionContent>
 						<ContactIcon/>
 						<OptionText>Contacto</OptionText>
-					</OptionButton>
+					</OptionContent>
 				</NavBarItem>
 				<NavBarItem>
-					<OptionButton>
+					<OptionContent>
 						<GitHubIcon/>
 						<OptionText>GitHub</OptionText>
-					</OptionButton>
+					</OptionContent>
 				</NavBarItem>
 			</NavBarList>
 		</NavBarContainer>

@@ -6,8 +6,8 @@ const GlobalStyles = createGlobalStyle`
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
 		--orange: #F39C12; 
-		--transition-time-fast: 200ms;
-		--transition-time-normal: 400ms;
+		--transition-fast: ease 200ms;
+		--transition-normal: ease 400ms;
 	};
 
 	* {
