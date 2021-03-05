@@ -8,5 +8,4 @@ export const HompageContainer = styled.div`
     background-attachment: fixed;
     width: 100vw;
     height: 100vh;
-    border: none;
 `;
