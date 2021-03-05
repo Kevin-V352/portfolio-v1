@@ -16,7 +16,10 @@ import {
 //Default settings for icons
 const defaultConfigIcon: string = `
   font-size: 2rem;
-  margin-left: 1rem;
+  margin: 0;
+  @media (min-width: 600px) {
+    margin-left: 1rem;
+  };
 `;
 
 //Configuration object for NavBarItem pseudo-classes (initial state)
@@ -37,13 +40,18 @@ const secondaryStateFrame: string = `
 `;
 
 export const OptionContent = styled.div`
-  transition: var(--transition-fast);
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
   height: 5rem;
-  width: min-content;
   background-color: transparent;
   color: var(--gray);
+  //Greater than 600px - large screens
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+    width: min-content;
+  };
 `;
 
 export const OptionText = styled.span`
@@ -57,6 +65,11 @@ export const NavBarItem = styled.li`
   width: 100%;
   &:last-child {  
     margin-top: auto;
+    display: none;
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+      display: block;
+    };
   };
   &:before {
     ${initialStateFrame};
@@ -95,23 +108,34 @@ export const NavBarList = styled.ul`
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   height: 100%; 
+  //Greater than 600px - large screens
+  @media (min-width: 600px) {
+    flex-direction: column;
+  };
 `;
 
 export const NavBarContainer = styled.nav`
-  overflow: hidden;
-  width: 4rem;
-  height: 100vh;
+  z-index: 2;
   position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 5rem;
+  bottom: 0;
   background-color:var(--black);
   transition: var(--transition-normal);
-  &:hover {
-    width: 10rem;
-    transition: var(--transition-normal);
-    ${OptionText} {
-      display: inline;
+  //Greater than 600px - large screens
+  @media (min-width: 600px) {
+    width: 4rem;
+    height: 100vh; 
+      &:hover {
+      width: 10rem;
+      transition: var(--transition-normal);
+      ${OptionText} {
+        display: inline;
+      };
     };
   };
 `;

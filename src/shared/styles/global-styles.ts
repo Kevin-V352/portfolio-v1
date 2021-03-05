@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
 	:root {
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
-		--orange: #F39C12; 
+		--orange: #E67E22; 
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
 	};
