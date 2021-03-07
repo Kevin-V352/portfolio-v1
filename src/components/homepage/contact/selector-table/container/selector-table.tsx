@@ -7,11 +7,10 @@ import * as S from './selector-table-elements';
 /* <---Components---> */
 import Form from '../direct-message/direct-message';
 import Links from '../links/links';
-import Info from "../info/info";
 
 const SelectorTable: FC = (): JSX.Element => {
 
-	const tableOptions: string[] = ['Enlaces', 'Mensaje directo', 'Información'];
+	const tableOptions: string[] = ['Mensaje directo', 'Enlaces'];
 
 	const [indexTab, setIndexTab] = useState<number>(0);
 
@@ -50,7 +49,7 @@ const SelectorTable: FC = (): JSX.Element => {
         <S.OptionMaker ref={maker} />
       </S.Header>
       <S.ResultContent>
-        {indexTab === 0 ?  <Links /> : indexTab === 1 ? <Form /> : <Info/>}
+        {indexTab === 0 ?  <Form/> : <Links /> }
       </S.ResultContent>
     </S.Container>
   );

@@ -36,9 +36,9 @@ const Links: FC = (): JSX.Element => {
           <S.TelegramIcon />
         </a>
       </S.ButtonIcon>
-      <S.ButtonIcon>
+{/*       <S.ButtonIcon>
         <S.MessengerIcon />
-      </S.ButtonIcon>
+      </S.ButtonIcon> */}
     </S.Container>
   );
 };

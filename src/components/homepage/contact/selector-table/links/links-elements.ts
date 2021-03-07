@@ -22,7 +22,16 @@ const defaultConfigIcon: string = `
 
 export const Container = styled.div`
     display: flex;
-    justify-content: center;
+    // Less than 600px - small screens
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    };
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+        flex-wrap: nowrap;
+        justify-content: center;
+    };
 `;
 
 export const ButtonIcon = styled.button`

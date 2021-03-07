@@ -21,6 +21,8 @@ const GlobalStyles = createGlobalStyle`
 		//Custom scrollbar - Firefox
 		scrollbar-color: var(--orange) var(--black) !important;
     	scrollbar-width: thin !important;
+		//Avoid blue overlay when selecting - Chrome
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	body {

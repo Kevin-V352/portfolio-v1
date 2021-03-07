@@ -13,7 +13,7 @@ const Homepage: FC = () => {
     <S.HompageContainer>
       <Introduction />
       <CustomSection bgImg={"./assets/2b.jpg"} />
-      <CustomSection bgImg={"./assets/3b.jpg"} />
+      <CustomSection bgImg={"./assets/3b.png"} />
       <Contact />
     </S.HompageContainer>
   );

@@ -22,13 +22,19 @@ export const Options = styled.div`
 `;
 
 export const OptionButton = styled.button`
-    font-size: 1.5rem;
     border: none;
     background-color: transparent;
     margin-top: 1rem;
     text-transform: uppercase;
-    
     color: ${(props: BTProps) => props.active ? 'white;' : 'var(--gray);'};
+    // Less than 600px - small screens
+    @media (max-width: 600px) {
+        font-size: 1rem;
+    };
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+        font-size: 1.5rem;
+    };
 `;
 
 export const OptionMaker = styled.div`
