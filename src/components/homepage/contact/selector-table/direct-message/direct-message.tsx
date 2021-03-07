@@ -2,17 +2,11 @@
 import React, { FC } from "react";
 
 /* <---Styled components---> */
-import {
-	ContactFormC,
-	ContactLabel,
-	ContactInput,
-	ContactTextArea,
-	ContactSubmitButton
-} from './contact-form-elements';
+import * as S from './direct-message-elements';
 
 import emailjs from "emailjs-com";
 
-const ContactForm = () => {
+const Form: FC = (): JSX.Element => {
 
 	const sendEmail = (e: any) => {
     e.preventDefault();
@@ -30,19 +24,20 @@ const ContactForm = () => {
           alert(`Ocurrio un error: ${error.status}`);
         }
       );
+      e.target.reset();
   };
 
 	return (
-		<ContactFormC onSubmit={sendEmail}>
-			<ContactLabel>Tu correo electrónico</ContactLabel>
-			<ContactInput type="email" name="user_email" />
-			<ContactLabel>Mensaje</ContactLabel>
-			<ContactTextArea name="message" />
-			<ContactSubmitButton type="submit">Enviar</ContactSubmitButton>
-		</ContactFormC>
+		<S.Form onSubmit={sendEmail}>
+			<S.Label>Tu correo electrónico</S.Label>
+			<S.Input type="email" name="user_email" />
+			<S.Label>Mensaje</S.Label>
+			<S.TextArea name="message" />
+			<S.SubmitButton type="submit">Enviar</S.SubmitButton>
+		</S.Form>
 	);
 };
 
-export default ContactForm;
+export default Form;
 
 

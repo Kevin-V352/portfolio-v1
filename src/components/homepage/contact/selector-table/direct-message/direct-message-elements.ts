@@ -12,28 +12,28 @@ const defaultConfigInput: string = `
     padding: .5rem;
 `;
 
-export const ContactFormC = styled.form`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
 `;
 
-export const ContactLabel = styled.label`
+export const Label = styled.label`
     color: var(--gray);
     text-transform: uppercase;
     font-size: 1.2rem;
 `;
 
-export const ContactInput = styled.input`
+export const Input = styled.input`
     ${defaultConfigInput};
 `;
 
-export const ContactTextArea = styled.textarea`
+export const TextArea = styled.textarea`
     ${defaultConfigInput};
     height: 10rem;
 `;
 
-export const ContactSubmitButton = styled.button`
+export const SubmitButton = styled.button`
     border-radius: .3rem;
     border: none;
     background-color: var(--gray);

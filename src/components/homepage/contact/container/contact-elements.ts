@@ -1,12 +1,7 @@
 /* <---Styled components dependencies---> */
 import styled from 'styled-components';
 
-//ButtonTab props
-interface BTProps {
-    active: boolean;
-}
-
-export const ContactContent = styled.div`
+export const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,7 +10,7 @@ export const ContactContent = styled.div`
     background-color: rgba(0, 0, 0, .65);
 `;
 
-export const ContactColumn = styled.div`
+export const Column = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,7 +18,7 @@ export const ContactColumn = styled.div`
     min-height: 90%;
 `;
 
-export const TitleContact = styled.h1`
+export const Title = styled.h1`
     text-transform: uppercase;
     color: var(--gray);
     user-select: none;
@@ -34,41 +29,4 @@ export const TitleContact = styled.h1`
     margin: 0;
 `;
 
-export const SubtitleContact = styled.h2`
-    text-transform: uppercase;
-    color: var(--gray);
-    user-select: none;
-    font-size: 1.5rem;
-    margin-bottom: 0;
-`;
 
-export const ContactTab = styled.div`
-    width: 100%;
-    margin-bottom: 1rem; 
-`;
-
-export const ContactHeader = styled.div`
-    position: relative; 
-`;
-
-export const ContactOptions = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-`;
-
-export const ButtonTab = styled.button`
-    font-size: 1.5rem;
-    border: none;
-    background-color: transparent;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    
-    color: ${(props: BTProps) => props.active ? 'white;' : 'var(--gray);'};
-`;
-
-export const Maker = styled.div`
-    position: absolute;
-    border-bottom: .15rem solid var(--orange);
-    transition: var(--transition-normal);
-`;

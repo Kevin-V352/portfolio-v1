@@ -13,14 +13,16 @@ import {
 //Default settings for icons
 const defaultConfigIcon: string = `
     color: var(--gray);
-    font-size: 4rem;
+    font-size: 5rem;
+    margin: 0 1rem;
     &:hover {
         color: var(--orange);
     };
 `;
 
-export const IconContainer = styled.div`
-    margin-top: 1rem;
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
 `;
 
 export const ButtonIcon = styled.button`
