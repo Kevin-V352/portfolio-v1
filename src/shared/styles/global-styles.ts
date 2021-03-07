@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
 		--orange: #E67E22; 
+		--transparent-gray: rgba(182, 182, 182, 0.3);
 		--orange-gradient: linear-gradient(to top, #ff512f, #f09819);
 		//Global transitions
 		--transition-fast: ease 200ms;
@@ -15,8 +16,8 @@ const GlobalStyles = createGlobalStyle`
 
 	* {
 		//Global font settings
-		font-size: 16px;
 		font-family: 'Text Me One', sans-serif;
+		font-weight: bold;
 		//Custom scrollbar - Firefox
 		scrollbar-color: var(--orange) var(--black) !important;
     	scrollbar-width: thin !important;
@@ -36,6 +37,13 @@ const GlobalStyles = createGlobalStyle`
 			background: var(--orange-gradient);
 		};
 	};
+
+	input:focus, 
+	select:focus, 
+	button:focus,
+	textarea:focus {
+        outline: none;
+    };
 `;
 
 export default GlobalStyles;

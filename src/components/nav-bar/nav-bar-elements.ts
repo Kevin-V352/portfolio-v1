@@ -56,6 +56,7 @@ export const OptionContent = styled.div`
 
 export const OptionText = styled.span`
   margin-left: 1rem;
+  user-select: none;
   display: none;
 `;
 
