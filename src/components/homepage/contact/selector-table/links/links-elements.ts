@@ -23,15 +23,31 @@ const defaultConfigIcon: string = `
 export const Container = styled.div`
     display: flex;
     // Less than 600px - small screens
-    @media (max-width: 600px) {
+    /* @media (max-width: 600px) {
         flex-wrap: wrap;
         justify-content: center;
-    };
+    }; */
     //Greater than 600px - large screens
-    @media (min-width: 600px) {
+    /* @media (min-width: 600px) {
         flex-wrap: nowrap;
         justify-content: center;
-    };
+    }; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 3rem);
+`;
+
+export const Description = styled.h2`
+    color: var(--gray);
+    text-transform: uppercase;
+    font-size: var(--subtitle-font-size);
+`;
+
+export const LinkCotainer = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 `;
 
 export const ButtonIcon = styled.button`

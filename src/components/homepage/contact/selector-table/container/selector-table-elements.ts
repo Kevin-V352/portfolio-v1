@@ -7,7 +7,8 @@ interface BTProps {
 };
 
 export const Container = styled.div`
-    width: 100%; 
+    width: 100%;
+    height: calc(100% - 2rem);
 `;
 
 export const Header = styled.div`
@@ -29,7 +30,7 @@ export const OptionButton = styled.button`
     color: ${(props: BTProps) => props.active ? 'white;' : 'var(--gray);'};
     // Less than 600px - small screens
     @media (max-width: 600px) {
-        font-size: 1rem;
+        /* font-size: var(--label-font-size); */
     };
     //Greater than 600px - large screens
     @media (min-width: 600px) {

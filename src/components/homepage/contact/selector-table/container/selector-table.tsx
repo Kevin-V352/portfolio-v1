@@ -48,9 +48,7 @@ const SelectorTable: FC = (): JSX.Element => {
         </S.Options>
         <S.OptionMaker ref={maker} />
       </S.Header>
-      <S.ResultContent>
         {indexTab === 0 ?  <Form/> : <Links /> }
-      </S.ResultContent>
     </S.Container>
   );
 };

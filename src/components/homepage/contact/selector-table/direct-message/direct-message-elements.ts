@@ -16,12 +16,12 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: calc(100% - 3rem);
 `;
 
 export const Label = styled.label`
     color: var(--gray);
     text-transform: uppercase;
-    font-size: 1.2rem;
 `;
 
 export const Input = styled.input`
@@ -30,7 +30,7 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
     ${defaultConfigInput};
-    height: 17rem;
+    height: calc(95% - 10.4rem);
 `;
 
 export const SubmitButton = styled.button`

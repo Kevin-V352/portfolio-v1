@@ -16,6 +16,6 @@ const App: FC = (): JSX.Element => {
       <GlobalStyles/>
     </>
   );
-}
+};
 
 export default App;
