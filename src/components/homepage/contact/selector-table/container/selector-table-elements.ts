@@ -47,5 +47,5 @@ export const ResultContent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 30vh;
+    min-height: 17rem;
 `;

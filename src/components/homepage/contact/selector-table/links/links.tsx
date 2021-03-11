@@ -10,6 +10,7 @@ const Links: FC = (): JSX.Element => {
       <S.ButtonIcon>
         <a
           href="https://ya.co.ve/KDG"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <S.LinkedinIcon />
@@ -18,6 +19,7 @@ const Links: FC = (): JSX.Element => {
       <S.ButtonIcon>
         <a
           href="https://ya.co.ve/BxK"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <S.WhatsappIcon />
@@ -31,14 +33,12 @@ const Links: FC = (): JSX.Element => {
       <S.ButtonIcon>
         <a
           href="https://ya.co.ve/eNR"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <S.TelegramIcon />
         </a>
       </S.ButtonIcon>
-{/*       <S.ButtonIcon>
-        <S.MessengerIcon />
-      </S.ButtonIcon> */}
     </S.Container>
   );
 };

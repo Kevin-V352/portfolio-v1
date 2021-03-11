@@ -10,7 +10,7 @@ const Form: FC = (): JSX.Element => {
 
 	const sendEmail = (e: any) => {
     e.preventDefault();
-    emailjs.sendForm(
+    /* emailjs.sendForm(
         "service_1wjwuz8",
         "template_kyqfd0i",
         e.target,
@@ -24,7 +24,7 @@ const Form: FC = (): JSX.Element => {
           alert(`Ocurrio un error: ${error.status}`);
         }
       );
-      e.target.reset();
+      e.target.reset(); */
   };
 
 	return (

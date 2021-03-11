@@ -14,7 +14,7 @@ export const Column = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     min-height: 90%;
     // Less than 600px - small screens
     @media (max-width: 600px) {
