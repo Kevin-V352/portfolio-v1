@@ -67,6 +67,7 @@ export const NavBarItem = styled.li`
   &:last-child {  
     margin-top: auto;
     display: none;
+    
     //Greater than 600px - large screens
     @media (min-width: 600px) {
       display: block;
@@ -112,6 +113,7 @@ export const NavBarList = styled.ul`
   flex-direction: row;
   align-items: center;
   height: 100%; 
+
   //Greater than 600px - large screens
   @media (min-width: 600px) {
     flex-direction: column;
@@ -122,11 +124,16 @@ export const NavBarContainer = styled.nav`
   z-index: 2;
   position: fixed;
   overflow: hidden;
-  width: 100vw;
-  height: 5rem;
-  bottom: 0;
   background-color:var(--black);
   transition: var(--transition-normal);
+
+  //Less than 600px - small screens
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 5rem;
+    bottom: 0;
+  };
+
   //Greater than 600px - large screens
   @media (min-width: 600px) {
     width: 4rem;

@@ -14,15 +14,20 @@ const GlobalStyles = createGlobalStyle`
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
 
+		//Font sizes
+		--primary-font-size: 2rem;
+		--secondary-font-size: 1rem;
+
 		// Less than 600px - small screens
 		@media (max-width: 600px) {
-		--title-font-size: 2rem;
-		--subtitle-font-size: 1.5rem;
+			--primary-font-size: 2rem;
+			--secondary-font-size: 1rem;
     	};
 
 		//Greater than 600px - large screens
 		@media (min-width: 600px) {
-		--title-font-size: 3rem;
+			--primary-font-size: 3rem;
+			--secondary-font-size: 1.5rem;
 		};
 		
 	};

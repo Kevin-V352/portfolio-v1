@@ -28,14 +28,7 @@ export const OptionButton = styled.button`
     margin-top: 1rem;
     text-transform: uppercase;
     color: ${(props: BTProps) => props.active ? 'white;' : 'var(--gray);'};
-    // Less than 600px - small screens
-    @media (max-width: 600px) {
-        /* font-size: var(--label-font-size); */
-    };
-    //Greater than 600px - large screens
-    @media (min-width: 600px) {
-        font-size: 1.5rem;
-    };
+    font-size: var(--secondary-font-size);
 `;
 
 export const OptionMaker = styled.div`

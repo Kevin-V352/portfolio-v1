@@ -1,44 +1,63 @@
 /* <---React---> */
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 /* <---Styled components---> */
 import * as S from "./links-elements";
 
 const Links: FC = (): JSX.Element => {
+
+  interface LA {
+    link: string;
+    component: any;
+  }
+
+  const linksArr: LA[] = [
+    {
+      link: "KDG",
+      component: <S.LinkedinIcon />,
+    },
+    {
+      link: "BxK",
+      component: <S.WhatsappIcon />,
+    },
+    {
+      link: "eNR",
+      component: <S.TelegramIcon />,
+    },
+  ];
+
+  const [largeScreen, setLargeScreen] = useState<boolean>(true);
+
+  const disableExteriorWindow = (): any => {
+    if(window.innerWidth < 600) {
+      setLargeScreen(false);
+    };
+  };
+
+  useEffect(() => {
+    disableExteriorWindow();
+  }, []);
+
+  /* window.addEventListener('resize', disableExteriorWindow()); */
+
   return (
     <S.Container>
       <S.Description>Redes sociales</S.Description>
       <S.LinkCotainer>
-        <S.ButtonIcon>
-          <a
-            href="https://ya.co.ve/KDG"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <S.LinkedinIcon />
-          </a>
-        </S.ButtonIcon>
-        <S.ButtonIcon>
-          <a
-            href="https://ya.co.ve/BxK"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <S.WhatsappIcon />
-          </a>
-        </S.ButtonIcon>
+        {linksArr.map((item) => (
+          <S.ButtonIcon>
+            <a
+              href={`https://ya.co.ve/${item.link}`}
+              rel={largeScreen ? "noopener noreferrer" : undefined}
+              target={largeScreen ? "_blank" : undefined}
+            >
+              {item.component}
+            </a>
+          </S.ButtonIcon>
+        ))}
         <S.ButtonIcon>
           <a href="mailto:kevinvega2070@gmail.com">
             <S.MailIcon />
-          </a> 
-        </S.ButtonIcon>
-        <S.ButtonIcon>
-          <a
-            href="https://ya.co.ve/eNR"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <S.TelegramIcon />
           </a>
         </S.ButtonIcon>
       </S.LinkCotainer>

@@ -22,6 +22,7 @@ export const Form = styled.form`
 export const Label = styled.label`
     color: var(--gray);
     text-transform: uppercase;
+    font-size: var(--secondary-font-size);
 `;
 
 export const Input = styled.input`
@@ -41,13 +42,19 @@ export const SubmitButton = styled.button`
     font-size: 1.5rem;
     text-transform: uppercase;
     transition: var(--transition-fast);
-    &:hover {
+
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+        &:hover {
         transition: var(--transition-fast);
         transform: scale(1.01);
         border-color: var(--orange);
         color: var(--orange);
-    }
+        };
+    };
     &:active {
-        transform: scale(0.99);
-    }
+        transform: scale(0.99);  
+        border-color: var(--orange);
+        color: var(--orange);
+    };
 `;

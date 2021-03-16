@@ -41,7 +41,7 @@ export const Container = styled.div`
 export const Description = styled.h2`
     color: var(--gray);
     text-transform: uppercase;
-    font-size: var(--subtitle-font-size);
+    font-size: var(--secondary-font-size);
 `;
 
 export const LinkCotainer = styled.div`
@@ -54,10 +54,15 @@ export const ButtonIcon = styled.button`
     border: none;
     background-color: transparent;
     transition: var(--transition-fast);
-    &:hover {
+
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+        &:hover {
         transform: scale(1.15);
         transition: var(--transition-fast);
+        };
     };
+    
 `;
 
 export const LinkedinIcon = styled(FaLinkedinIn)`

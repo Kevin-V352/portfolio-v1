@@ -8,6 +8,10 @@ export const Container = styled.div`
     align-items: flex-end;  
     justify-content: center;
     background-color: rgba(0, 0, 0, .65);
+    //Greater than 600px - large screens
+    @media (min-width: 600px) {
+        align-items: center;  
+    };
 `;
 
 export const Column = styled.div`
@@ -30,15 +34,7 @@ export const Title = styled.h1`
     width: 100%;
     text-align: center;
     margin: 0;
-    font-size: var(--title-font-size);
-    /* // Less than 600px - small screens
-    @media (max-width: 600px) {
-        font-size: 2rem;
-    }; */
-    //Greater than 600px - large screens
-    /* @media (min-width: 600px) {
-        font-size: 3rem;
-    }; */
+    font-size: var(--primary-font-size);
 `;
 
 
