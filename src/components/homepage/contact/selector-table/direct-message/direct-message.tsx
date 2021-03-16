@@ -23,18 +23,18 @@ const Form: FC = (): JSX.Element => {
         (error) => {
           alert(`Ocurrio un error: ${error.status}`);
         }
-      );
-      e.target.reset(); */
+      ); */
+      e.target.reset();
   };
 
 	return (
-		<S.Form onSubmit={sendEmail}>
-			<S.Label>Tu correo electrónico</S.Label>
-			<S.Input type="email" name="user_email" />
-			<S.Label>Mensaje</S.Label>
-			<S.TextArea name="message" />
-			<S.SubmitButton type="submit">Enviar</S.SubmitButton>
-		</S.Form>
+    <S.Form onSubmit={sendEmail}>
+      <S.Label>Tu correo electrónico</S.Label>
+      <S.Input type="email" name="user_email" />
+      <S.Label>Mensaje</S.Label>
+      <S.TextArea name="message" />
+      <S.SubmitButton type="submit">Enviar</S.SubmitButton>
+    </S.Form>
 	);
 };
 

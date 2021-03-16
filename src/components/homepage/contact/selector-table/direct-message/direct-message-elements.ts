@@ -1,6 +1,9 @@
 /* <---Styled components dependencies---> */
 import styled from 'styled-components';
 
+/* <---Toast notification---> */
+import { ToastContainer } from 'react-toastify';
+
 //Default settings for inputs
 const defaultConfigInput: string = `
     border-radius: .3rem;
@@ -31,6 +34,7 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
     ${defaultConfigInput};
+    resize: none;
     height: calc(95% - 10.4rem);
 `;
 
@@ -57,4 +61,18 @@ export const SubmitButton = styled.button`
         border-color: var(--orange);
         color: var(--orange);
     };
+`;
+
+export const CustomAlert = styled(ToastContainer).attrs({
+    toastClassName: 'toast',
+    progressClassName: 'progress'
+})`
+    .toast {
+        /* font-family: 'Red Hat Text', sans-serif; */
+        background-color: var(--black);
+        color: var(--gray);
+    }
+    .progress {
+        background-color: var(--orange);
+    }
 `;
