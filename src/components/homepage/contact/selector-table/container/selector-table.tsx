@@ -4,6 +4,9 @@ import React, { FC, useState, useRef, useEffect } from "react";
 /* <---Styled components---> */
 import * as S from './selector-table-elements';
 
+/* <---React transition group---> */
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 /* <---Components---> */
 import Form from '../direct-message/direct-message';
 import Links from '../links/links';
@@ -48,7 +51,18 @@ const SelectorTable: FC = (): JSX.Element => {
         </S.Options>
         <S.OptionMaker ref={maker} />
       </S.Header>
-        {indexTab === 0 ?  <Form/> : <Links /> }
+      <TransitionGroup component={S.TransitionBox}>
+        {
+          indexTab === 0 ? 
+          <CSSTransition key={1} timeout={200} classNames="fade">
+            <Form/>
+          </CSSTransition>
+          : 
+          <CSSTransition key={2} timeout={200} classNames="fade">
+            <Links/>
+          </CSSTransition>
+        }
+      </TransitionGroup>
     </S.Container>
   );
 };

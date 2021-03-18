@@ -19,7 +19,7 @@ export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	height: calc(100% - 3rem);
+	height: 100%;
 `;
 
 export const Label = styled.label`

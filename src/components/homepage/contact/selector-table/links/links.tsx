@@ -44,8 +44,8 @@ const Links: FC = (): JSX.Element => {
     <S.Container>
       <S.Description>Redes sociales</S.Description>
       <S.LinkCotainer>
-        {linksArr.map((item) => (
-          <S.ButtonIcon>
+        {linksArr.map((item, index: number) => (
+          <S.ButtonIcon key={index}>
             <a
               href={`https://ya.co.ve/${item.link}`}
               rel={largeScreen ? "noopener noreferrer" : undefined}
