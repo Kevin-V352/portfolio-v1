@@ -10,20 +10,7 @@ const Form: FC = (): JSX.Element => {
 
 	const sendEmail = (e: any) => {
     e.preventDefault();
-    /* emailjs.sendForm(
-        "service_1wjwuz8",
-        "template_kyqfd0i",
-        e.target,
-        "user_FL3Ns7CkBO5lOzJgJtPwH"
-      )
-      .then(
-        (result) => {
-          alert(`Se envio correctamente: ${result.status}`);
-        },
-        (error) => {
-          alert(`Ocurrio un error: ${error.status}`);
-        }
-      ); */
+    
       e.target.reset();
   };
 

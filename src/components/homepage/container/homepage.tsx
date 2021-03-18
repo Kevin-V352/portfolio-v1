@@ -5,16 +5,16 @@ import React, { FC } from "react";
 import * as S from './homepage-elements';
 
 /* <---Components---> */
-import { CustomSection } from "../../../shared/styled-elements/global-styled-elements";
 import Contact from "../contact/container/contact";
 import Introduction from "../introduction/introduction";
 import TechnologicalStack from "../technological-stack/technological-stack";
+import Projetcs from "../projects/projects";
 
 const Homepage: FC = () => {
   return (
     <S.HompageContainer>
       <Introduction />
-      <CustomSection bgImg={"./assets/2b.jpg"} />
+      <Projetcs />
       <TechnologicalStack />
       <Contact />
     </S.HompageContainer>

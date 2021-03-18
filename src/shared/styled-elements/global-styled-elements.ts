@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 // Custom Section Props
 interface CSProps {
-    bgImg: string;
+    bgImg: string | null;
 };
 
 export const CustomSection = styled.div`
