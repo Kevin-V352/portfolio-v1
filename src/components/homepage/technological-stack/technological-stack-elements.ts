@@ -21,6 +21,9 @@ import {
 const defaultConfigIcon: string = `
   font-size: 8rem;
   margin: 1rem;
+	@media (max-width: 600px) {
+		font-size: 4rem;
+	};
 `;
 
 interface IconBoxProps {
@@ -43,8 +46,8 @@ export const Column = styled.div`
 	height: 75%;
 	// Less than 600px - small screens
 	@media (max-width: 600px) {
-			width: 90%;
-			margin-bottom: 5rem;
+		width: 90%;
+		margin-bottom: 5rem;
 	};
 `;
 
@@ -59,9 +62,19 @@ export const Title = styled.h1`
 `;
 
 export const IconsContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	// Less than 600px - small screens
+	@media (max-width: 600px) {
+		display: grid;
+		justify-items: center;
+		grid-template-columns: repeat(3, 33.3%);
+	};
+
+	//Greater than 600px - large screens
+	@media (min-width: 600px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	};
 `;
 
 export const IconBox = styled.div`
@@ -71,8 +84,8 @@ export const IconBox = styled.div`
 	color: white;
 	transition: var(--transition-fast);
 	&:hover {
-			transform: scale(1.10);
-			color: ${(props: IconBoxProps) => props.fontColor};
+		transform: scale(1.10);
+		color: ${(props: IconBoxProps) => props.fontColor};
 	};
 `;
 
@@ -97,7 +110,7 @@ export const JsIcon = styled(FaJsSquare)`
 `;
 
 export const ReduxIcon = styled(SiRedux)`
-    ${defaultConfigIcon}
+  ${defaultConfigIcon}
 `;
 
 export const Css3Icon = styled(FaCss3Alt)`
@@ -105,11 +118,11 @@ export const Css3Icon = styled(FaCss3Alt)`
 `;
 
 export const BootstrapIcon = styled(FaBootstrap)`
-    ${defaultConfigIcon}
+  ${defaultConfigIcon}
 `;
 
 export const MaterialUiIcon = styled(SiMaterialUi)`
-    ${defaultConfigIcon}
+  ${defaultConfigIcon}
 `;
 
 export const StyledComponentsIcon = styled(SiStyledComponents)`

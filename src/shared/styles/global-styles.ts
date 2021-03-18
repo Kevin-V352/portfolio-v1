@@ -29,7 +29,6 @@ const GlobalStyles = createGlobalStyle`
 			--primary-font-size: 3rem;
 			--secondary-font-size: 1.5rem;
 		};
-		
 	};
 
 	* {
