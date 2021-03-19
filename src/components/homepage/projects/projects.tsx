@@ -9,54 +9,82 @@ import { CustomSection } from "../../../shared/styled-elements/global-styled-ele
 
 const Projetcs: FC = (): JSX.Element => {
 
-	const slides = useRef<HTMLDivElement[]>([]);
+  const slides = useRef<HTMLDivElement[]>([]);
+  const indicatorSlides = useRef<HTMLDivElement[]>([]);
 
-	const [selectedSlide, setSeletctedSlide] = useState<number>(1);
+  let currentSlide: number = 1; 
 
-	const arr: string[] = [
-		'./assets/img-slides/1s.jpg',
-		'./assets/img-slides/2s.jpg',
-		'./assets/img-slides/3s.jpg',
-		'./assets/img-slides/4s.jpg'
-	];
+  const arr: string[] = [
+    "./assets/img-slides/1s.jpg",
+    "./assets/img-slides/2s.jpg",
+    "./assets/img-slides/3s.jpg",
+    "./assets/img-slides/4s.jpg"
+  ];
 
-	const changeSlide = (index: number) => {
-		if(index > slides.current.length) {
-			setSeletctedSlide(1);
-		}
-		else if(index < 1) {
-			setSeletctedSlide(slides.current.length);
-		}
-		for (let i = 0; i < slides.current.length; i++) {
-			slides.current[i].style.display = "none";
-		};
-		slides.current[selectedSlide - 1].style.display = "flex";
+  const carousel = (n: number) => {
+    if(n > slides.current.length) {
+      currentSlide = 1;
+    };
+    if(n < 1) {
+      currentSlide = slides.current.length;
+    };
+    for(let i = 0; i < slides.current.length; i++) {
+      slides.current[i].style.display = "none";
+      indicatorSlides.current[i].style.backgroundColor = "var(--gray)";
+    };
+    slides.current[currentSlide - 1].style.display = "block";
+    indicatorSlides.current[currentSlide - 1].style.backgroundColor = "white";
+   /*  setTimeout(() => {
+      newSlide(1);
+    }, 15000); */
+  };
+
+  const newSlide = (n: number) => {
+    carousel(currentSlide += n);
 	};
 
-	const newSlide = (n: number) => {
-		setSeletctedSlide(selectedSlide + n);
-		changeSlide(selectedSlide);
-	};
+  const newIndicatorSlide = (n: number) => {
+    currentSlide = n;
+    carousel(n);
+  };
 
-	useEffect(() => {
-		changeSlide(1);
-	}, []);
+  const calculateGaugeWidth = (n: number) => {
+    return ((100 / n) - 1);
+  };
+
+  useEffect(() => {
+    carousel(currentSlide);
+  }, []);
 
   return (
     <CustomSection bgImg={null}>
       <S.CarouselContainer>
-				{
-					arr.map((img: string, index: number) => (
-						<S.Slide key={index} bgImg={img} ref={(ref) => slides.current.push(ref!)}/>
-					))
-				}
-				<S.ChangeButton position={null} onClick={() => newSlide(-1)}>
-					<S.LeftArrowIcon/>
-				</S.ChangeButton>
-				<S.ChangeButton position={"right: 0"} onClick={() => newSlide(1)}>
-					<S.RightArrowIcon/>
-				</S.ChangeButton>
-			</S.CarouselContainer>
+        {arr.map((img: string, index: number) => (
+          <S.Slide
+            key={index}
+            bgImg={img}
+            ref={(ref) => slides.current.length < arr.length ? slides.current.push(ref!): null}
+          />
+        ))}
+        <S.ChangeButton position={"left: 0"} onClick={() => newSlide(-1)} >
+          <S.LeftArrowIcon/>
+        </S.ChangeButton>
+        <S.ChangeButton position={"right: 0"} onClick={() => newSlide(1)}>
+          <S.RightArrowIcon />
+        </S.ChangeButton >
+        <S.IndicatorBox>
+          {
+            arr.map((undefined, index: number) => (
+              <S.IndicatorSlide 
+                key={index}
+                ref={(ref) => indicatorSlides.current.length < arr.length ? indicatorSlides.current.push(ref!): null}
+                onClick={() => newIndicatorSlide(index + 1)}
+                width={calculateGaugeWidth(arr.length)}
+              />
+            ))
+          }
+        </S.IndicatorBox>
+      </S.CarouselContainer>
     </CustomSection>
   );
 };
