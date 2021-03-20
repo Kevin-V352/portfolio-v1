@@ -24,7 +24,7 @@ const TechnologicalStack: FC = (): JSX.Element => {
   ];
 
   return (
-    <CustomSection bgImg={"./assets/3b.png"}>
+    <CustomSection bgImg={"./assets/img-backgrounds/3b.png"}>
       <S.Container>
         <S.Column>
           <S.Title>stack tecnológico</S.Title>

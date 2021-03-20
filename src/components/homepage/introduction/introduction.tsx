@@ -6,7 +6,7 @@ import { CustomSection } from '../../../shared/styled-elements/global-styled-ele
 
 const Introduction: FC = () => {
     return (
-        <CustomSection bgImg={'./assets/1b.jpg'}>
+        <CustomSection bgImg={'./assets/img-backgrounds/1b.jpg'}>
         </CustomSection>
     );
 };

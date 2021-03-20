@@ -12,7 +12,7 @@ import { CustomSection } from "../../../../shared/styled-elements/global-styled-
 
 const Contact: FC = (): JSX.Element => { 
   return (
-    <CustomSection bgImg={"./assets/4b.jpg"}>
+    <CustomSection bgImg={"./assets/img-backgrounds/4b.jpg"}>
       <S.Container>
         <S.Column>
           <S.Title>Contacto</S.Title>
