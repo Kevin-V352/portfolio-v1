@@ -92,8 +92,9 @@ export const IndicatorSlide = styled.div`
 	height: 100%;
 	background-color: var(--gray);
 	cursor: pointer;
+	transition: var(--transition-fast);
 	&:hover {
-		transform: scaleY(3);
+		transform: scaleY(4);
 		transition: var(--transition-fast);
 	};
 `;	

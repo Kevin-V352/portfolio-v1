@@ -13,6 +13,11 @@ import {
   BiUser
 } from 'react-icons/bi';
 
+// Option Content Props
+interface OCProps {
+	active: boolean | undefined;
+};
+
 //Default settings for icons
 const defaultConfigIcon: string = `
   font-size: 2rem;
@@ -46,7 +51,7 @@ export const OptionContent = styled.div`
   transition: var(--transition-fast);
   height: 5rem;
   background-color: transparent;
-  color: var(--gray);
+  color: ${(props: OCProps) => props.active ? "var(--orange)" : "var(--gray)"};
   //Greater than 600px - large screens
   @media (min-width: 600px) {
     justify-content: flex-start;

@@ -1,3 +1,5 @@
+/* 【Ｇｌｏｂａｌ　ｓｔｙｌｅｓ】 */
+
 /* <---Styled components dependencies---> */
 import { createGlobalStyle } from 'styled-components';
 

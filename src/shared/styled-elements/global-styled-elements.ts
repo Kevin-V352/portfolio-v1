@@ -1,3 +1,5 @@
+/* 【Ｓｔｙｌｅｄ　ｅｌｅｍｅｎｔｓ】 */
+
 /* <---Styled components dependencies---> */
 import styled from 'styled-components';
 
