@@ -10,7 +10,7 @@ import Homepage from './components/homepage/container/homepage';
 
 const App: FC = () => {
 
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const loader = document.getElementById("loader-container");
@@ -24,9 +24,9 @@ const App: FC = () => {
     };
   }, []);
 
-  if (loading) {
+  if (isLoading) {
     return null;
-  }
+  };
 
   return (
     <>
