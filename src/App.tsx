@@ -1,5 +1,5 @@
 /* <---React---> */
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 /* <---Global styles---> */
 import GlobalStyles from './shared/styles/global-styles';
@@ -8,7 +8,26 @@ import GlobalStyles from './shared/styles/global-styles';
 import NavBar from './components/nav-bar/nav-bar';
 import Homepage from './components/homepage/container/homepage';
 
-const App: FC = (): JSX.Element => {
+const App: FC = () => {
+
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const loader = document.getElementById("loader-container");
+    if(loader) {
+      loader.classList.add('available')
+        setTimeout(() => {
+          // remove from DOM
+          loader.remove();
+        }, 2000);
+      setLoading(false);
+    };
+  }, []);
+
+  if (loading) {
+    return null;
+  }
+
   return (
     <>
       <NavBar/>
@@ -19,3 +38,5 @@ const App: FC = (): JSX.Element => {
 };
 
 export default App;
+
+

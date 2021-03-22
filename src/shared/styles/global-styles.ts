@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
 	};
 
 	body {
-		margin: 0;
+		margin: 0; 
 		padding: 0;
 
 		//Custom scrollbar - Chrome
