@@ -12,9 +12,10 @@ import { CustomSection } from "../../../shared/styled-elements/global-styled-ele
 
 const TechnologicalStack: FC = (): JSX.Element => {
   const stackIcons: ArrStyledComponent[] = [
-    { name: "JavaScript", color: "#F4DD11", component: <S.JsIcon /> },
     { name: "HTML5", color: "#E35E2A", component: <S.Html5Icon /> },
     { name: "CSS3", color: "#25A3DC", component: <S.Css3Icon /> },
+    { name: "JavaScript", color: "#F4DD11", component: <S.JsIcon /> },
+    { name: "TypeScript", color: "#396FBF", component: <S.TsIcon /> },
     { name: "React JS", color: "#69D8FF", component: <S.ReactIcon /> },
     { name: "Redux", color: "#743DB6", component: <S.ReduxIcon /> },
     { name: "Material UI", color: "#2AA5F6", component: <S.MaterialUiIcon /> },

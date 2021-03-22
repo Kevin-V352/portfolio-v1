@@ -14,7 +14,8 @@ import {
 import {
 	SiStyledComponents,
 	SiRedux,
-	SiMaterialUi
+	SiMaterialUi,
+	SiTypescript
 } from 'react-icons/si';
 
 //Default settings for icons
@@ -126,6 +127,10 @@ export const MaterialUiIcon = styled(SiMaterialUi)`
 `;
 
 export const StyledComponentsIcon = styled(SiStyledComponents)`
+	${defaultConfigIcon}
+`;
+
+export const TsIcon = styled(SiTypescript)`
 	${defaultConfigIcon}
 `;
 
