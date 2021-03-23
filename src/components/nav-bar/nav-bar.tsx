@@ -1,5 +1,5 @@
 /* <---React---> */
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 /* <---Styled components---> */
 import * as S from "./nav-bar-elements";
@@ -18,23 +18,27 @@ const NavBar: FC = (): JSX.Element => {
 
   const [activePosition, setActivePostion] = useState<number>(0);
 
-  //set the position in the document
+  //Set the position in the document
   const positionView = (multiplier: number): void => {
+    const tallRealWindow: number = document.documentElement.scrollHeight / 4;
     window.scrollTo({
-      top: window.innerHeight * multiplier,
-      behavior: "smooth",
-    });
+      top: tallRealWindow * multiplier,
+      behavior: "smooth"
+    });  
   };
 
-  //calculates the coordinate (Y) where the user is and activates the side icon
+  //Calculates the coordinate (Y) where the user is and activates the side icon
   const activePositionIcon = (): void => {
     const coordinateY: number = window.pageYOffset;
     const clientScreenSize: number = window.innerHeight;
     setActivePostion(Math.floor(coordinateY / clientScreenSize));
   };
   
-  //call the function to activate the icons every time the user scrolls
-  window.addEventListener("scroll", activePositionIcon);
+  
+  useEffect(() => {
+    //Call the function to activate the icons every time the user scrolls
+    window.addEventListener("scroll", activePositionIcon);
+  }, []);
 
   return (
     <S.NavBarContainer>

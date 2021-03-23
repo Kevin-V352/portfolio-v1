@@ -45,6 +45,7 @@ export const Column = styled.div`
 	flex-direction: column;
 	width: 70%;
 	height: 75%;
+	
 	// Less than 600px - small screens
 	@media (max-width: 600px) {
 		width: 90%;
@@ -63,18 +64,17 @@ export const Title = styled.h1`
 `;
 
 export const IconsContainer = styled.div`
+	display: grid;
+	justify-items: center;
+
 	// Less than 600px - small screens
 	@media (max-width: 600px) {
-		display: grid;
-		justify-items: center;
 		grid-template-columns: repeat(3, 33.3%);
 	};
 
 	//Greater than 600px - large screens
 	@media (min-width: 600px) {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		grid-template-columns: repeat(5, 20%);
 	};
 `;
 

@@ -56,6 +56,8 @@ const GlobalStyles = createGlobalStyle`
 	body {
 		margin: 0; 
 		padding: 0;
+		//ACORDATE DE ESTO
+		overflow-y: hidden;
 
 		//Custom scrollbar - Chrome
 		&::-webkit-scrollbar {
