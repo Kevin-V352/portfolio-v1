@@ -89,23 +89,26 @@ export const NavBarItem = styled.li`
     right: 0;
   };
 
-  &:hover {
+  //Greater than 600px - large screens
+  @media (min-width: 600px) {
+    &:hover {
     //Animation display in the lower left edge
     &:before {
     ${secondaryStateFrame};
     border-right: none;
     border-bottom: none;
-  };
-  //Animation display in the upper right edge
-  &:after {
-    ${secondaryStateFrame};
-    border-left: none;
-    border-top: none;
-  };
-    ${OptionContent} {
-      color: var(--orange);
-      transform: scale(1.15);
-      transition: var(--transition-fast);
+    };
+    //Animation display in the upper right edge
+    &:after {
+      ${secondaryStateFrame};
+      border-left: none;
+      border-top: none;
+    };
+      ${OptionContent} {
+        color: var(--orange);
+        transform: scale(1.15);
+        transition: var(--transition-fast);
+      };
     };
   };
 `;
@@ -135,7 +138,7 @@ export const NavBarContainer = styled.nav`
   //Less than 600px - small screens
   @media (max-width: 600px) {
     width: 100vw;
-    height: 5rem;
+    height: 4rem;
     bottom: 0;
   };
 

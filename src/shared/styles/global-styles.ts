@@ -1,8 +1,13 @@
-/* 【Ｇｌｏｂａｌ　ｓｔｙｌｅｓ】 */
-
 /* <---Styled components dependencies---> */
 import { createGlobalStyle } from 'styled-components';
 
+/* Breakpoints */
+export const sm: string = "600px";
+export const md: string = "960px";
+export const lg: string = "1280px";
+export const xl: string = "1920px";
+
+/* Global Styles Settings */
 const GlobalStyles = createGlobalStyle`
 	:root {
 		//Global colors
@@ -71,5 +76,6 @@ const GlobalStyles = createGlobalStyle`
         outline: none;
     };
 `;
+
 
 export default GlobalStyles;

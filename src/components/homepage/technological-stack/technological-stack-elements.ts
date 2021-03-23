@@ -23,7 +23,7 @@ const defaultConfigIcon: string = `
   font-size: 8rem;
   margin: 1rem;
 	@media (max-width: 600px) {
-		font-size: 4rem;
+		font-size: 3rem;
 	};
 `;
 
@@ -91,7 +91,8 @@ export const IconBox = styled.div`
 `;
 
 export const IconName = styled.span`
-  font-size: var(--secondary-font-size);  
+  font-size: var(--secondary-font-size); 
+	text-align: center; 
 `;
 
 export const SassIcon = styled(FaSass)`
