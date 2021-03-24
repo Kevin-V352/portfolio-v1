@@ -9,7 +9,9 @@ export const xl: string = "1920px";
 
 /* Global Styles Settings */
 const GlobalStyles = createGlobalStyle`
+	
 	:root {
+		background-color: #1C1C1C;
 		//Global colors
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
@@ -52,13 +54,13 @@ const GlobalStyles = createGlobalStyle`
 		//Avoid blue overlay when selecting - Chrome
 		-webkit-tap-highlight-color: transparent;
 	};
+	
 
 	body {
 		margin: 0; 
 		padding: 0;
 		//ACORDATE DE ESTO
 		overflow-y: hidden;
-
 		//Custom scrollbar - Chrome
 		&::-webkit-scrollbar {
 			width: .25rem;

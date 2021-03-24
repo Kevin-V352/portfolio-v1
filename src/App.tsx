@@ -8,7 +8,7 @@ import GlobalStyles from './shared/styles/global-styles';
 import NavBar from './components/nav-bar/nav-bar';
 import Homepage from './components/homepage/container/homepage';
 
-const App: FC = () => {
+const App: FC = (): JSX.Element | null => {
 
   const [isLoading, setLoading] = useState<boolean>(true);
 
@@ -24,17 +24,16 @@ const App: FC = () => {
     };
   }, []);
 
-  if (isLoading) {
-    return null;
-  };
-
   return (
+    isLoading ? 
+    null
+    :
     <>
       <NavBar/>
       <Homepage/>
       <GlobalStyles/>
     </>
-  );
+  )
 };
 
 export default App;

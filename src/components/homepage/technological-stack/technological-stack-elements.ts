@@ -23,7 +23,7 @@ const defaultConfigIcon: string = `
   font-size: 8rem;
   margin: 1rem;
 	@media (max-width: 600px) {
-		font-size: 3rem;
+		font-size: 2rem;
 	};
 `;
 

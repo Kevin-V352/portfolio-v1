@@ -5,7 +5,6 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: flex-end;  
     justify-content: center;
     background-color: rgba(0, 0, 0, .65);
     //Greater than 600px - large screens

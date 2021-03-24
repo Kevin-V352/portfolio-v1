@@ -1,5 +1,3 @@
-/* 【Ｓｔｙｌｅｄ　ｅｌｅｍｅｎｔｓ】 */
-
 /* <---Styled components dependencies---> */
 import styled from 'styled-components';
 
@@ -7,16 +5,16 @@ import styled from 'styled-components';
 
 // Custom Section Props
 interface CSProps {
-    bgImg: string | null;
+	bgImg: string | null;
 };
 
 export const CustomSection = styled.div`
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background: fixed center url('${(props: CSProps) => props.bgImg}');
-    overflow: hidden;
-    @media (max-width: 600px) {
-        /* padding-bottom: 4rem; */
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background: fixed center url('${(props: CSProps) => props.bgImg}');
+	overflow: hidden;
+	@media (max-width: 600px) {
+		padding-bottom: 4rem;
 	};
 `;
