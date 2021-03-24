@@ -21,9 +21,9 @@ const Contact: FC = (): JSX.Element => {
     else {
       setKeyboardHeight(0);
       const tallRealWindow: number = document.documentElement.scrollHeight / 4;
-      window.scrollTo({
+      /* window.scrollTo({
         top: tallRealWindow * 3
-      });
+      }); */
     }
   });
 

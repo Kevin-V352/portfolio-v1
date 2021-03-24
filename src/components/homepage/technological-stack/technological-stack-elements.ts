@@ -1,7 +1,6 @@
-/* <---Styled components dependencies---> */
+/* Imports */
 import styled from 'styled-components';
-
-/* <---React icons---> */
+import { sm } from "../../../shared/styles/global-styles"
 import {
 	FaBootstrap,
 	FaCss3Alt,
@@ -10,7 +9,6 @@ import {
 	FaHtml5,
 	FaJsSquare
 } from 'react-icons/fa';
-
 import {
 	SiStyledComponents,
 	SiRedux,
@@ -18,25 +16,29 @@ import {
 	SiTypescript
 } from 'react-icons/si';
 
+/* Styled components */
+
+//Interfaces
+interface IconBoxProps {
+	fontColor: string;
+	active: boolean;
+};
+
 //Default settings for icons
 const defaultConfigIcon: string = `
   font-size: 8rem;
   margin: 1rem;
 	@media (max-width: 600px) {
-		font-size: 2rem;
+		font-size: 3.5rem;
 	};
 `;
-
-interface IconBoxProps {
-	fontColor: string;
-};
 
 export const Container = styled.div`
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 100%;
+	padding-top: 2rem;
 `;
 
 export const Column = styled.div`
@@ -44,10 +46,10 @@ export const Column = styled.div`
 	align-items: center;
 	flex-direction: column;
 	width: 70%;
-	height: 75%;
+	height: calc(100% - 10rem);
 	
 	// Less than 600px - small screens
-	@media (max-width: 600px) {
+	@media (max-width: ${sm}) {
 		width: 90%;
 		margin-bottom: 5rem;
 	};
@@ -66,14 +68,16 @@ export const Title = styled.h1`
 export const IconsContainer = styled.div`
 	display: grid;
 	justify-items: center;
+	width: 100%;
+	height: 100%;
 
 	// Less than 600px - small screens
-	@media (max-width: 600px) {
-		grid-template-columns: repeat(3, 33.3%);
+	@media (max-width: ${sm}) {
+		grid-template-columns: repeat(4, 25%);
 	};
 
 	//Greater than 600px - large screens
-	@media (min-width: 600px) {
+	@media (min-width: ${sm}) {
 		grid-template-columns: repeat(5, 20%);
 	};
 `;
@@ -83,10 +87,30 @@ export const IconBox = styled.div`
 	flex-direction: column;
 	align-items: center;
 	color: white;
-	transition: var(--transition-fast);
-	&:hover {
-		transform: scale(1.10);
-		color: ${(props: IconBoxProps) => props.fontColor};
+	${(props: IconBoxProps) => (
+		props.active ?
+		`color: ${props.fontColor};
+		transform: scale(1.10);` 
+		:
+		null
+	)}
+
+	// Less than 600px - small screens
+	@media (max-width: ${sm}) {
+		transition: var(--transition-normal);
+		&:active {
+			transform: scale(1.10);
+			color: ${(props: IconBoxProps) => props.fontColor};
+		};
+	};
+	
+	//Greater than 600px - large screens
+	@media (min-width: ${sm}) {
+		transition: var(--transition-fast);
+		&:hover {
+			transform: scale(1.10);
+			color: ${(props: IconBoxProps) => props.fontColor};
+		};
 	};
 `;
 

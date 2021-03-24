@@ -1,5 +1,5 @@
 /* <---React---> */
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 /* <---Styled components---> */
 import * as S from "./technological-stack-elements";
@@ -24,6 +24,23 @@ const TechnologicalStack: FC = (): JSX.Element => {
     { name: "Styled Components", color: "#E8AD67", component: <S.StyledComponentsIcon /> },
   ];
 
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const changeActiveIcon = () => {
+    if(activeIndex === stackIcons.length - 1) {
+      setActiveIndex(0);
+    }
+    else {
+      setActiveIndex(activeIndex + 1);
+    };
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+     changeActiveIcon(); 
+    }, 3000);
+  }, [activeIndex]);
+
   return (
     <CustomSection bgImg={"./assets/img-backgrounds/3b.png"}>
       <S.Container>
@@ -31,7 +48,7 @@ const TechnologicalStack: FC = (): JSX.Element => {
           <S.Title>stack tecnológico</S.Title>
           <S.IconsContainer>
             {stackIcons.map((item: ArrStyledComponent, index: number) => (
-              <S.IconBox fontColor={item.color} key={index}>
+              <S.IconBox fontColor={item.color} key={index} active={index === activeIndex ? true : false}>
                 {item.component}
                 <S.IconName>{item.name}</S.IconName>
               </S.IconBox>

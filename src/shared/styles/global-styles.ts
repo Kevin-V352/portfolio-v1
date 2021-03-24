@@ -1,4 +1,4 @@
-/* <---Styled components dependencies---> */
+/* Imports */
 import { createGlobalStyle } from 'styled-components';
 
 /* Breakpoints */
