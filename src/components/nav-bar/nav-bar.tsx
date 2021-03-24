@@ -45,7 +45,7 @@ const NavBar: FC = (): JSX.Element => {
       <S.NavBarList>
         {
           positionOptions.map((option: ArrComponent, index: number) => (
-            <S.NavBarItem onClick={() => positionView(index)}>
+            <S.NavBarItem onClick={() => positionView(index)} key={index}>
               <S.OptionContent active={activePosition === index ? true : false}>
                 {option.component}
                 <S.OptionText>{option.name}</S.OptionText>

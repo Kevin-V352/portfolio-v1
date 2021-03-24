@@ -137,7 +137,6 @@ export const NavBarContainer = styled.nav`
 
   //Less than 600px - small screens
   @media (max-width: 600px) {
-    /* display: none; */
     width: 100vw;
     height: 4rem;
     bottom: 0;
@@ -154,6 +153,11 @@ export const NavBarContainer = styled.nav`
         display: inline;
       };
     };
+  };
+
+  //Styles when the virtual keyboard is displayed
+  @media (max-width: 600px) and (orientation: landscape) {
+    display: none;   
   };
 `;
 

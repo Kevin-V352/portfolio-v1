@@ -15,7 +15,7 @@ const Form: FC = (): JSX.Element => {
   };
 
 	return (
-    <S.Form onSubmit={sendEmail}>
+    <S.Form onSubmit={sendEmail} autoComplete="off">
       <S.Label>Tu correo electrónico</S.Label>
       <S.Input type="email" name="user_email" />
       <S.Label>Mensaje</S.Label>

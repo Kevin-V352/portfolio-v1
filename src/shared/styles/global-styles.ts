@@ -55,12 +55,11 @@ const GlobalStyles = createGlobalStyle`
 		-webkit-tap-highlight-color: transparent;
 	};
 	
-
 	body {
 		margin: 0; 
 		padding: 0;
-		//ACORDATE DE ESTO
 		overflow-y: hidden;
+
 		//Custom scrollbar - Chrome
 		&::-webkit-scrollbar {
 			width: .25rem;

@@ -14,7 +14,4 @@ export const CustomSection = styled.div`
 	background-size: cover;
 	background: fixed center url('${(props: CSProps) => props.bgImg}');
 	overflow: hidden;
-	@media (max-width: 600px) {
-		padding-bottom: 4rem;
-	};
 `;
