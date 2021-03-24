@@ -35,7 +35,8 @@ export const Input = styled.input`
 export const TextArea = styled.textarea`
 	${defaultConfigInput};
 	resize: none;
-	height: calc(95% - 10.4rem);
+	min-height: 5rem;
+	height: calc(100% - 10rem);
 `;
 
 export const SubmitButton = styled.button`

@@ -8,12 +8,17 @@ interface BTProps {
 
 export const Container = styled.div`
 	width: 100%;
-	height: calc(100% - 3rem);
+	height: 100%;
 `;
 
 export const Header = styled.div`
 	position: relative; 
 	margin-bottom: 1rem;
+
+	//Styles when the virtual keyboard is displayed
+	@media screen and (orientation: landscape) {
+		display: none;   
+	};
 `;
 
 export const Options = styled.div`
@@ -38,7 +43,7 @@ export const OptionMaker = styled.div`
 `;
 
 export const TransitionBox = styled.div`
-	height: calc(100% - 3rem);
+	height: calc(100% - 3.15rem);
 	.fade-enter {
 		opacity: 0;
 		transform: scale(0.9);
