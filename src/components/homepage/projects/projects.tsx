@@ -55,41 +55,39 @@ const Projetcs: FC = (): JSX.Element => {
   }, []);
 
   return (
-    <CustomSection bgImg={null}>
-      <S.CarouselContainer>
-        {proyectsArr.map((img: string, index: number) => (
-          <S.Slide
+    <S.CarouselContainer>
+      {proyectsArr.map((img: string, index: number) => (
+        <S.Slide
+          key={index}
+          bgImg={img}
+          ref={(ref) =>
+            slides.current.length < proyectsArr.length
+              ? slides.current.push(ref!)
+              : null
+          }
+        />
+      ))}
+      <S.ChangeButton position={"left: 0"} onClick={() => newSlide(-1)}>
+        <S.LeftArrowIcon />
+      </S.ChangeButton>
+      <S.ChangeButton position={"right: 0"} onClick={() => newSlide(1)}>
+        <S.RightArrowIcon />
+      </S.ChangeButton>
+      <S.IndicatorBox>
+        {proyectsArr.map((x, index: number) => (
+          <S.IndicatorSlide
             key={index}
-            bgImg={img}
             ref={(ref) =>
-              slides.current.length < proyectsArr.length
-                ? slides.current.push(ref!)
+              indicatorSlides.current.length < proyectsArr.length
+                ? indicatorSlides.current.push(ref!)
                 : null
             }
+            onClick={() => newIndicatorSlide(index)}
+            width={calculateGaugeWidth(proyectsArr.length)}
           />
         ))}
-        <S.ChangeButton position={"left: 0"} onClick={() => newSlide(-1)}>
-          <S.LeftArrowIcon />
-        </S.ChangeButton>
-        <S.ChangeButton position={"right: 0"} onClick={() => newSlide(1)}>
-          <S.RightArrowIcon />
-        </S.ChangeButton>
-        <S.IndicatorBox>
-          {proyectsArr.map((x, index: number) => (
-            <S.IndicatorSlide
-              key={index}
-              ref={(ref) =>
-                indicatorSlides.current.length < proyectsArr.length
-                  ? indicatorSlides.current.push(ref!)
-                  : null
-              }
-              onClick={() => newIndicatorSlide(index)}
-              width={calculateGaugeWidth(proyectsArr.length)}
-            />
-          ))}
-        </S.IndicatorBox>
-      </S.CarouselContainer>
-    </CustomSection>
+      </S.IndicatorBox>
+    </S.CarouselContainer>
   );
 };
 

@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
 		//Global colors
 		--black: #1C1C1C;
 		--gray: #B6B6B6;
-		--orange: #E67E22; 
+		--orange: #E35E2A; 
 		--transparent-gray: rgba(182, 182, 182, 0.3);
 		--orange-gradient: linear-gradient(to top, #ff512f, #f09819);
 
@@ -58,7 +58,7 @@ const GlobalStyles = createGlobalStyle`
 	body {
 		margin: 0; 
 		padding: 0;
-		overflow-y: hidden;
+		/* overflow-y: hidden; */
 
 		//Custom scrollbar - Chrome
 		&::-webkit-scrollbar {

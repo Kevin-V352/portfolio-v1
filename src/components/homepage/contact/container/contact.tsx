@@ -28,14 +28,12 @@ const Contact: FC = (): JSX.Element => {
   });
 
   return (
-    <CustomSection bgImg={"./assets/img-backgrounds/4b.jpg"}>
       <S.Container>
         <S.Column height={keyboardHeight}>
           <S.Title>Contacto</S.Title>
           <SelectorTable/>
         </S.Column>
       </S.Container>
-    </CustomSection>
   );
 };
 

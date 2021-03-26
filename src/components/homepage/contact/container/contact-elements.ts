@@ -7,12 +7,12 @@ interface CProps {
 };
 
 export const Container = styled.div`
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
-	background-color: rgba(0, 0, 0, .65);
 	padding-top: 2rem;
+	background-color: rgba(0, 0, 0, .5);
 
 	//Greater than 600px - large screens
 	@media (min-width: 600px) {

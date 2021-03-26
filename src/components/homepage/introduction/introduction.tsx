@@ -1,26 +1,19 @@
 /* <---React---> */
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 /* <---Global elements---> */
-import { CustomSection } from '../../../shared/styled-elements/global-styled-elements';
+import { CustomSection } from "../../../shared/styled-elements/global-styled-elements";
 
-import Lottie from 'react-lottie';
+import * as S from "./introduction-elements";
 
 const Introduction: FC = () => {
-    return (
-        <CustomSection bgImg={'./assets/img-backgrounds/1b.jpg'}>
-            {/* <Lottie
-                options={{
-                    loop: true,
-                    animationData: require("../../../shared/json-animations/data.json")
-                }}
-                height={500}
-                width={500}
-            >
-                
-            </Lottie> */}
-        </CustomSection>
-    );
+  return (
+    <S.Container>
+      <S.Column>
+        <S.Title>Inicio</S.Title>
+      </S.Column>
+    </S.Container>
+  );
 };
 
 export default Introduction;
