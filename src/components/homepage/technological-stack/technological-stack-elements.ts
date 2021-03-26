@@ -38,12 +38,12 @@ export const Container = styled.div`
 	justify-content: center;
 	width: 100%;
 	height: 100vh;
-	padding-top: 2rem;
 	background-color: rgba(0, 0, 0, .5);
 	overflow: hidden;
 `;
 
 export const Column = styled.div`
+	margin-top: 2rem;
 	display: flex;
 	align-items: center;
 	flex-direction: column;

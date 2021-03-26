@@ -95,7 +95,16 @@ export const IndicatorBox = styled.div`
 	position: absolute;
 	width: 30%;
 	height: .5%;
-	bottom: 2%;
+
+	// Less than 600px - small screens
+	@media (max-width: 600px) {
+		bottom: calc(100% - ${(window.innerHeight / 16) - 6}rem);
+	};
+
+	// Greater than 600px - large screens
+  @media (min-width: 600px) {
+		bottom: 2%;
+	};
 `;
 
 export const IndicatorSlide = styled.div`

@@ -3,15 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     justify-content: center;
-    width: 100%;
-    //Fix this
-    /* height: calc(100vh - 6px); */
+    width: 100vw;
     height: 100vh;
-    padding-top: 2rem;
     background-color: rgba(0, 0, 0, .5);
 `;
 
 export const Column = styled.div`
+    margin-top: 2rem;
     height: calc(100% - 10rem);
     width: 90%;
     display: flex;

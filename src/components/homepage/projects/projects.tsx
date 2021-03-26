@@ -62,7 +62,9 @@ const Projetcs: FC = (): JSX.Element => {
               ? slides.current.push(ref!)
               : null
           }
-        />
+        >
+          
+        </S.Slide>
       ))}
       <S.ChangeButton position={"left: 0"} onClick={() => newSlide(-1)}>
         <S.LeftArrowIcon />

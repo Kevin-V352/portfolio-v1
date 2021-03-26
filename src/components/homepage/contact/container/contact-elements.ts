@@ -11,7 +11,6 @@ export const Container = styled.div`
 	height: 100vh;
 	display: flex;
 	justify-content: center;
-	padding-top: 2rem;
 	background-color: rgba(0, 0, 0, .5);
 
 	//Greater than 600px - large screens
@@ -30,6 +29,7 @@ export const Column = styled.div`
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin-top: 2rem;
 	width: 70%;
 	${(props: CProps) => props.height ? `min-height: ${props.height - 20}px` : "height: calc(100% - 10rem)"};
 
