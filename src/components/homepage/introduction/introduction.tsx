@@ -6,7 +6,7 @@ import { CustomSection } from "../../../shared/styled-elements/global-styled-ele
 
 import * as S from "./introduction-elements";
 
-const Introduction: FC = () => {
+const Introduction: FC = (): JSX.Element => {
   return (
     <S.Container>
       <S.Column>

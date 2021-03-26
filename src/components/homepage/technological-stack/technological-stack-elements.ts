@@ -40,6 +40,7 @@ export const Container = styled.div`
 	height: 100vh;
 	padding-top: 2rem;
 	background-color: rgba(0, 0, 0, .5);
+	overflow: hidden;
 `;
 
 export const Column = styled.div`

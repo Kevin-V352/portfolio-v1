@@ -137,6 +137,7 @@ export const NavBarContainer = styled.nav`
 
   //Less than 600px - small screens
   @media (max-width: 600px) {
+    /* display: none; */
     width: 100vw;
     height: 4rem;
     bottom: 0;

@@ -4,6 +4,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
+    //Fix this
+    /* height: calc(100vh - 6px); */
     height: 100vh;
     padding-top: 2rem;
     background-color: rgba(0, 0, 0, .5);
@@ -25,11 +27,4 @@ export const Title = styled.h1`
 	text-align: center;
 	margin: 0;
 	font-size: var(--primary-font-size);
-`;
-
-export const LogoImg = styled.img`
-    height: 50%;
-    width: 70%;
-    border-radius: .5rem;
-    margin-top: 1rem;
 `;

@@ -30,7 +30,7 @@ const defaultConfigIcon: string = `
 export const CarouselContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
@@ -68,14 +68,25 @@ export const ChangeButton = styled.button`
 	transition: var(--transition-fast);
 	color: var(--gray);
 	cursor: pointer;
-	&:hover {
-		transform: scale(1.5);
-		transition: var(--transition-fast);
-		color: white;
+
+	// Less than 600px - small screens
+	@media (max-width: 600px) {
+		&:active {
+			transform: scale(.85);
+		};
 	};
-	&:active {
-		transform: scale(1);  
-	};
+
+	//Greater than 600px - large screens
+	@media (min-width: 600px) {
+		&:hover {
+			transform: scale(1.5);
+			transition: var(--transition-fast);
+			color: white;
+		};
+		&:active {
+			transform: scale(1); 
+		};
+  };
 `;
 
 export const IndicatorBox = styled.div`
