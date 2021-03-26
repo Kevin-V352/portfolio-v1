@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { GiProtectionGlasses } from 'react-icons/gi';
+
 export const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -15,6 +17,7 @@ export const Column = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--gray);
 `;
 
 export const Title = styled.h1`
@@ -25,4 +28,19 @@ export const Title = styled.h1`
 	text-align: center;
 	margin: 0;
 	font-size: var(--primary-font-size);
+`;
+
+export const GlassesIcon = styled(GiProtectionGlasses)`
+    font-size: 8rem;
+`;
+
+export const Subtitle = styled.h2`
+    font-size: var(--primary-font-size);
+    margin: .5rem;
+`;
+
+export const Description = styled.p`
+    font-size: var(--secondary-font-size);
+    text-transform: uppercase;
+    text-align: center;
 `;

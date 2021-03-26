@@ -8,6 +8,11 @@ const Introduction: FC = (): JSX.Element => {
     <S.Container>
       <S.Column>
         <S.Title>Inicio</S.Title>
+        <S.GlassesIcon/>
+        <S.Subtitle>KEVIN VEGA</S.Subtitle>
+        <S.Description>
+          Soy un desarrollador web con orientación al área del front-end.
+        </S.Description>
       </S.Column>
     </S.Container>
   );

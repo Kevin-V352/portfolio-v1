@@ -23,10 +23,6 @@ const GlobalStyles = createGlobalStyle`
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
 
-		//Font sizes
-		--primary-font-size: 2rem;
-		--secondary-font-size: 1rem;
-
 		// Less than 600px - small screens
 		@media (max-width: 600px) {
 			--primary-font-size: 2rem;
