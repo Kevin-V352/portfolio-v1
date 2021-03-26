@@ -58,7 +58,7 @@ const GlobalStyles = createGlobalStyle`
 	body {
 		margin: 0; 
 		padding: 0;
-		/* overflow-y: hidden; */
+		overflow-y: hidden;
 
 		//Custom scrollbar - Chrome
 		&::-webkit-scrollbar {

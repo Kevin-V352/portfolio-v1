@@ -14,9 +14,6 @@ const defaultConfigIcon: string = `
 	color: var(--gray);
 	font-size: 5rem;
 	margin: 0 1rem;
-	&:hover {
-		color: var(--orange);
-	};
 `;
 
 export const Container = styled.div`
@@ -43,11 +40,19 @@ export const ButtonIcon = styled.button`
 	background-color: transparent;
 	transition: var(--transition-fast);
 
+	// Less than 600px - small screens
+	@media (max-width: 600px) {
+		&:active {
+			transform: scale(.85);
+		};
+	};
+
 	//Greater than 600px - large screens
 	@media (min-width: 600px) {
 		&:hover {
-		transform: scale(1.15);
-		transition: var(--transition-fast);
+			transform: scale(1.15);
+			transition: var(--transition-fast);
+			color: var(--orange);
 		};
 	};  
 `;
