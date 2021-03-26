@@ -7,9 +7,6 @@ import * as S from "./contact-elements";
 /* <---Components---> */
 import SelectorTable from "../selector-table/container/selector-table";
 
-/* <---Global elements---> */
-import { CustomSection } from "../../../../shared/styled-elements/global-styled-elements";
-
 const Contact: FC = (): JSX.Element => { 
 
   const [keyboardHeight, setKeyboardHeight] = useState<number>(0);

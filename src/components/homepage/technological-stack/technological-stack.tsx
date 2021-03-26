@@ -7,9 +7,6 @@ import * as S from "./technological-stack-elements";
 /* <---Global interfaces---> */
 import { ArrStyledComponent } from "../../../shared/global-interfaces/global-interfaces";
 
-/* <---Global elements---> */
-import { CustomSection } from "../../../shared/styled-elements/global-styled-elements";
-
 const TechnologicalStack: FC = (): JSX.Element => {
   const stackIcons: ArrStyledComponent[] = [
     { name: "HTML5", color: "#E35E2A", component: <S.Html5Icon /> },
@@ -26,17 +23,13 @@ const TechnologicalStack: FC = (): JSX.Element => {
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const changeActiveIcon = () => {
-    if (activeIndex === stackIcons.length - 1) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
-
   useEffect(() => {
     setTimeout(() => {
-      changeActiveIcon();
+      if (activeIndex === stackIcons.length - 1) {
+        setActiveIndex(0);
+      } else {
+        setActiveIndex(activeIndex + 1);
+      }
     }, 3000);
   }, [activeIndex]);
 

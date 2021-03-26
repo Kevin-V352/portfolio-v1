@@ -4,9 +4,6 @@ import React, { FC, useRef, useEffect } from "react";
 /* <---Styled components---> */
 import * as S from "./projects-elements";
 
-/* <---Global elements---> */
-import { CustomSection } from "../../../shared/styled-elements/global-styled-elements";
-
 const Projetcs: FC = (): JSX.Element => {
   const slides = useRef<HTMLDivElement[]>([]);
   const indicatorSlides = useRef<HTMLDivElement[]>([]);
