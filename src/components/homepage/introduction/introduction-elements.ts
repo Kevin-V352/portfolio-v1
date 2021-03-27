@@ -11,13 +11,30 @@ export const Container = styled.div`
 `;
 
 export const Column = styled.div`
-    margin-top: 2rem;
-    height: calc(100% - 10rem);
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--gray);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--gray);	
+	margin-top: 2rem;
+
+  //Screen smaller than 600px - mobile
+	@media (max-width: 600px) {
+		height: calc(100% - 10rem);
+		width: 90%;
+	};
+
+	//Medium screens (600px - 1024px) - tablets
+	@media (min-width: 600px) {
+		height: calc(100% - 14rem);
+		width: 90%;
+	};
+
+	//Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
+		width: 70%;
+		height: 100%;
+	};
+ 
 `;
 
 export const Title = styled.h1`
