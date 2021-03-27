@@ -51,7 +51,11 @@ export const OptionContent = styled.div`
   transition: var(--transition-fast);
   height: 5rem;
   background-color: transparent;
-  color: ${(props: OCProps) => props.active ? "var(--orange)" : "var(--gray)"};
+  ${(props: OCProps) => (
+    props.active ? 
+    "color: var(--orange); transform: scale(1.15);" 
+    : 
+    "color: var(--gray)")};
   //Greater than 600px - large screens
   @media (min-width: 600px) {
     justify-content: flex-start;
@@ -137,7 +141,6 @@ export const NavBarContainer = styled.nav`
 
   //Less than 600px - small screens
   @media (max-width: 600px) {
-    /* display: none; */
     width: 100vw;
     height: 4rem;
     bottom: 0;

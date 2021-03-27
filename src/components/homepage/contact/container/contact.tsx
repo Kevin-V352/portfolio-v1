@@ -1,5 +1,5 @@
 /* <---React---> */
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 /* <---Styled components---> */
 import * as S from "./contact-elements";
@@ -7,32 +7,26 @@ import * as S from "./contact-elements";
 /* <---Components---> */
 import SelectorTable from "../selector-table/container/selector-table";
 
-const Contact: FC = (): JSX.Element => { 
-
+const Contact: FC = (): JSX.Element => {
   const [keyboardHeight, setKeyboardHeight] = useState<number>(0);
 
-  window.addEventListener("resize", () => {
-    if(window.innerWidth > window.innerHeight){
-      setKeyboardHeight(window.outerHeight);
-    }
-    else {
-      setKeyboardHeight(0);
-      const tallRealWindow: number = document.documentElement.scrollHeight / 4;
-      if(tallRealWindow * 3 === window.pageYOffset){
-        window.scrollTo({
-          top: tallRealWindow * 3
-        });
-      }
-    }
-  });
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > window.innerHeight) {
+        setKeyboardHeight(window.outerHeight);
+      } else {
+        setKeyboardHeight(0);
+      };
+    });
+  }, []);
 
   return (
-      <S.Container>
-        <S.Column height={keyboardHeight}>
-          <S.Title>Contacto</S.Title>
-          <SelectorTable/>
-        </S.Column>
-      </S.Container>
+    <S.Container>
+      <S.Column height={keyboardHeight}>
+        <S.Title>Contacto</S.Title>
+        <SelectorTable />
+      </S.Column>
+    </S.Container>
   );
 };
 
