@@ -25,12 +25,15 @@ interface ISProps {
 //Default settings for icons
 const defaultConfigIcon: string = `
 	font-size: 4rem;
+	@media (min-width: 1920px) {
+		font-size: 6rem; 
+	};
 `;
 
 export const CarouselContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
@@ -96,13 +99,18 @@ export const IndicatorBox = styled.div`
 	width: 30%;
 	height: .5%;
 
-	// Less than 600px - small screens
+	//Screen smaller than 600px - mobile
 	@media (max-width: 600px) {
 		bottom: calc(100% - ${(window.innerHeight / 16) - 6}rem);
 	};
 
-	// Greater than 600px - large screens
+	//Medium screens (600px - 1024px) - tablets
   @media (min-width: 600px) {
+		bottom: calc(100% - ${(window.innerHeight / 16) - 10}rem);
+	};
+
+	//Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
 		bottom: 2%;
 	};
 `;

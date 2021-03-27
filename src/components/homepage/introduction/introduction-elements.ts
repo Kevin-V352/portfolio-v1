@@ -5,7 +5,7 @@ import { GiProtectionGlasses } from 'react-icons/gi';
 export const Container = styled.div`
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, .5);
 `;
