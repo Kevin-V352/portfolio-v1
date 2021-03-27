@@ -34,7 +34,6 @@ export const Column = styled.div`
 		width: 70%;
 		height: 100%;
 	};
- 
 `;
 
 export const Title = styled.h1`

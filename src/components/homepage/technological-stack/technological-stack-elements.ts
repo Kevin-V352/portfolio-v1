@@ -26,10 +26,18 @@ interface IconBoxProps {
 
 //Default settings for icons
 const defaultConfigIcon: string = `
-  font-size: 8rem;
   margin: 1rem;
 	@media (max-width: 600px) {
-		font-size: 3.5rem;
+		font-size: 4rem;
+	};
+	@media (min-width: 600px) {
+		font-size: 6rem;
+	};
+	@media (min-width: 1024px) {
+		font-size: 8rem;
+	};
+	@media (min-width: 1920px) {
+		font-size: 12rem;
 	};
 `;
 
@@ -49,11 +57,23 @@ export const Column = styled.div`
 	flex-direction: column;
 	width: 70%;
 	height: calc(100% - 10rem);
-	
-	// Less than 600px - small screens
-	@media (max-width: ${sm}) {
+
+	//Screen smaller than 600px - mobile
+	@media (max-width: 600px) {
+		height: calc(100% - 10rem);
 		width: 90%;
-		margin-bottom: 5rem;
+	};
+	
+	//Medium screens (600px - 1024px) - tablets
+	@media (min-width: 600px) {
+		height: calc(100% - 14rem);
+		width: 90%;
+	};
+
+	//Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
+		width: 70%;
+		height: 100%;
 	};
 `;
 
@@ -73,13 +93,13 @@ export const IconsContainer = styled.div`
 	width: 100%;
 	height: 100%;
 
-	// Less than 600px - small screens
-	@media (max-width: ${sm}) {
+	//Shared screens no more than 1024px - mobile - tablet
+	@media (min-width: ${sm}) {
 		grid-template-columns: repeat(4, 25%);
 	};
 
-	//Greater than 600px - large screens
-	@media (min-width: ${sm}) {
+	//Screen greater than 1024px - desktop
+	@media (min-width: 1024px) {
 		grid-template-columns: repeat(5, 20%);
 	};
 `;
@@ -97,7 +117,7 @@ export const IconBox = styled.div`
 		null
 	)}
 
-	// Less than 600px - small screens
+	//Screen smaller than 600px - mobile
 	@media (max-width: ${sm}) {
 		transition: var(--transition-normal);
 		&:active {
