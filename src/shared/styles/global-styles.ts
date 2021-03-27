@@ -23,16 +23,22 @@ const GlobalStyles = createGlobalStyle`
 		--transition-fast: ease 200ms;
 		--transition-normal: ease 400ms;
 
-		// Less than 600px - small screens
+		//Screen smaller than 600px - mobile
 		@media (max-width: 600px) {
 			--primary-font-size: 2rem;
 			--secondary-font-size: 1rem;
     	};
 
-		//Greater than 600px - large screens
+		//Medium screens (600px - 1024px) - tablets
 		@media (min-width: 600px) {
 			--primary-font-size: 3rem;
-			--secondary-font-size: 1.5rem;
+			--secondary-font-size: 2rem;
+		};
+
+		//Screen greater than 1920px - desktop
+		@media (min-width: 1920px) {
+			--primary-font-size: 5rem;
+			--secondary-font-size: 3rem;
 		};
 	};
 

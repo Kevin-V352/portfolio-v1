@@ -20,10 +20,16 @@ interface OCProps {
 
 //Default settings for icons
 const defaultConfigIcon: string = `
-  font-size: 2rem;
   margin: 0;
-  @media (min-width: 600px) {
+  @media (max-width: 1024px) {
+    font-size: var(--primary-font-size); 
+  };
+  @media (min-width: 1024px) {
+    font-size: var(--secondary-font-size);
     margin-left: 1rem;
+  };
+  @media (min-width: 1920px) {
+    margin: 0;
   };
 `;
 
@@ -49,17 +55,35 @@ export const OptionContent = styled.div`
   align-items: center;
   justify-content: center;
   transition: var(--transition-fast);
-  height: 5rem;
   background-color: transparent;
   ${(props: OCProps) => (
     props.active ? 
     "color: var(--orange); transform: scale(1.15);" 
     : 
     "color: var(--gray)")};
-  //Greater than 600px - large screens
-  @media (min-width: 600px) {
+
+  //Screen smaller than 600px - mobile
+	@media (max-width: 600px) {
+    justify-content: center;
+    height: 4rem;
+	};
+
+  //Medium screens (600px - 1024px) - tablets
+	@media (min-width: 600px) {
+    justify-content: center;
+    height: 6rem;
+	};
+
+  //Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
     justify-content: flex-start;
     width: min-content;
+    height: 5rem;
+  };
+
+  //Screen greater than 1920px - desktop
+  @media (min-width: 1920px) {
+    padding: 1rem;
   };
 `;
 
@@ -67,6 +91,7 @@ export const OptionText = styled.span`
   margin-left: 1rem;
   user-select: none;
   display: none;
+  font-size: calc(var(--secondary-font-size) / 2);
 `;
 
 export const NavBarItem = styled.li`
@@ -76,38 +101,39 @@ export const NavBarItem = styled.li`
   &:last-child {  
     margin-top: auto;
     display: none;
-    
+
     //Greater than 600px - large screens
     @media (min-width: 600px) {
       display: block;
     };
   };
-  &:before {
-    ${initialStateFrame};
-    bottom: 0;
-    left: 0;
-  };
-  &:after {
-    ${initialStateFrame};
-    top: 0;
-    right: 0;
-  };
 
-  //Greater than 600px - large screens
-  @media (min-width: 600px) {
-    &:hover {
-    //Animation display in the lower left edge
+  //Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
+    //Initial state after and before pseudo elements
     &:before {
-    ${secondaryStateFrame};
-    border-right: none;
-    border-bottom: none;
+      ${initialStateFrame};
+      bottom: 0;
+      left: 0;
     };
-    //Animation display in the upper right edge
     &:after {
-      ${secondaryStateFrame};
-      border-left: none;
-      border-top: none;
+      ${initialStateFrame};
+      top: 0;
+      right: 0;
     };
+    &:hover {
+      //Animation display in the lower left edge
+      &:before {
+      ${secondaryStateFrame};
+      border-right: none;
+      border-bottom: none;
+      };
+      //Animation display in the upper right edge
+      &:after {
+        ${secondaryStateFrame};
+        border-left: none;
+        border-top: none;
+      };
       ${OptionContent} {
         color: var(--orange);
         transform: scale(1.15);
@@ -126,8 +152,18 @@ export const NavBarList = styled.ul`
   align-items: center;
   height: 100%; 
 
-  //Greater than 600px - large screens
-  @media (min-width: 600px) {
+  //Screen smaller than 600px - mobile
+  @media (max-width: 600px) {
+    flex-direction: row;
+  };
+
+  //Medium screens (600px - 1024px) - tablets
+	@media (min-width: 600px) {
+    flex-direction: row;
+	};
+
+  //Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
     flex-direction: column;
   };
 `;
@@ -139,15 +175,22 @@ export const NavBarContainer = styled.nav`
   background-color:var(--black);
   transition: var(--transition-normal);
 
-  //Less than 600px - small screens
+  //Screen smaller than 600px - mobile
   @media (max-width: 600px) {
     width: 100vw;
     height: 4rem;
     bottom: 0;
   };
 
-  //Greater than 600px - large screens
-  @media (min-width: 600px) {
+  //Medium screens (600px - 1024px) - tablets
+	@media (min-width: 600px) {
+    width: 100vw;
+    height: 6rem;
+		bottom: 0;
+	};
+
+  //Screen greater than 1024px - desktop
+  @media (min-width: 1024px) {
     width: 4rem;
     height: 100vh; 
       &:hover {
@@ -156,6 +199,14 @@ export const NavBarContainer = styled.nav`
       ${OptionText} {
         display: inline;
       };
+    };
+  };
+
+  //Screen greater than 1920px - desktop
+  @media (min-width: 1920px) {
+    width: 5rem;
+      &:hover {
+      width: 14rem;
     };
   };
 
